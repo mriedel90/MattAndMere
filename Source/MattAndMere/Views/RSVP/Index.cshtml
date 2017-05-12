@@ -1,0 +1,133 @@
+﻿@model MattAndMere.Models.ReservationModel
+@{
+    ViewBag.Title = "RSVP";
+}
+
+<h2>RSVP</h2>
+<p>Please RSVP by May 1st, 2017. <br /> One RSVP per person.</p>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="col-md-12 center">
+            <label class="control-label">Will you be attending the wedding?</label>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 center">
+                <label>@Html.RadioButtonFor(model => model.WillAttend, true, new { onchange = "toggleRsvpDetails(this);" }) Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <label>@Html.RadioButtonFor(model => model.WillAttend, false, new { onchange = "toggleRsvpDetails(this);" }) No</label>
+            </div>
+            <div class="col-md-12 center">
+                @Html.ValidationMessageFor(model => model.WillAttend, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br />
+
+        <div id="rsvpDetails" style="@(Model != null && Model.WillAttend.HasValue && Model.WillAttend.Value ? "display:block" : "display:none")">
+            <div class="col-md-12 center">
+                <label class="control-label">Please select your dinner preference:</label>
+            </div>
+            <div class="center">
+                <div class="centertext">
+                    <label>@Html.RadioButtonFor(model => model.MealChoice, 1) Salmon</label>
+                </div>
+                <div class="centertext">
+                    <label>@Html.RadioButtonFor(model => model.MealChoice, 2) Pork</label>
+                </div>
+                <div class="centertext">
+                    <label>@Html.RadioButtonFor(model => model.MealChoice, 3) Vegetarian Ravioli</label>
+                </div>
+            </div>
+            <div class="col-md-12 center">
+                @Html.ValidationMessageFor(model => model.MealChoice, "", new { @class = "text-danger" })
+            </div>
+
+            <br />
+
+            <div class="col-md-12 center">
+                <label class="control-label">Will you take the shuttle from one of the 2 hotels to the wedding?</label>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 center">
+                    <label>@Html.RadioButtonFor(model => model.Shuttle, true, new { onchange = "toggleShuttleDetails(this);" }) Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label>@Html.RadioButtonFor(model => model.Shuttle, false, new { onchange = "toggleShuttleDetails(this);" }) No</label>
+                </div>
+                <div class="col-md-12 center">
+                    @Html.ValidationMessageFor(model => model.Shuttle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div id="shuttleDetails" style="@(Model != null && Model.Shuttle.HasValue && Model.Shuttle.Value ? "display:block" : "display:none")">
+                <div class="col-md-12 center">
+                    <label class="control-label">The shuttle will be leaving at 4:00 PM, please be prompt as there are no other depature times.</label>
+                </div>
+                <br />
+                <div class="col-md-12 center">
+                    <label class="control-label">Which hotel will you be taking the shuttle to and from?</label>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-6">
+                        <label>@Html.RadioButtonFor(model => model.Hotel, "Holiday") Holiday Inn Express & Suites Elkton - University Area</label><br />
+                        <label>@Html.RadioButtonFor(model => model.Hotel, "Hampton") Hampton Inn Elkton</label>
+
+                    </div>
+                </div>
+                <div class="col-md-12 center">
+                    @Html.ValidationMessageFor(model => model.Hotel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Message, new { @class = "form-control", @rows = 5 })
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-12 center">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="centercontainer">
+                <div class="centerblock">Validation Errors:<br />@Html.ValidationSummary()</div>
+            </div>
+        }
+    </div>
+
+
+
+    <script type="text/javascript">
+        function toggleShuttleDetails(obj) {
+            if (obj.value == "True")
+                $("#shuttleDetails").show("slow");
+            else
+                $("#shuttleDetails").hide("slow");
+        }
+        function toggleRsvpDetails(obj) {
+            if (obj.value == "True")
+                $("#rsvpDetails").show("slow");
+            else
+                $("#rsvpDetails").hide("slow");
+        }
+    </script>
+}

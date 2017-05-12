@@ -1,0 +1,43 @@
+﻿@model List<MattAndMere.Models.ReservationModel>
+@{
+    ViewBag.Title = "RSVP";
+}
+
+<h2>All Reservations (@Model.Count):</h2>
+
+<table class="allreservations">
+    <thead>
+    <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Attending</th>
+        <th>Dinner</th>
+        <th>Shuttle</th>
+        <th>Hotel</th>
+        <th>Message</th>
+        <th>Created</th>
+    </tr>
+    </thead>
+    @foreach (var res in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@res.Id</td>
+                <td>@res.Name</td>
+                <td>@if (res.WillAttend.HasValue && res.WillAttend.Value) { <text>Yes</text> } else { <text>No</text>}</td>
+                <td>@res.MealChoice.ToString()</td>
+                <td>@if (res.Shuttle.HasValue && res.Shuttle.Value) { <text>Yes</text> } else { <text>No</text>}</td>
+                <td>@res.Hotel</td>
+                <td>@res.Message</td>
+                <td>@res.DateCreated.ToShortDateString()</td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+<br />
+<br />
+Total RSVPs: @Model.Count <br />
+Total Attending: @Model.Where(x => x.WillAttend.HasValue && x.WillAttend.Value).Count() <br />
+Total Not Attending: @Model.Where(x => !x.WillAttend.HasValue || !x.WillAttend.Value).Count() <br />
+Total Taking Shuttle: @Model.Where(x => x.Shuttle.HasValue && x.Shuttle.Value).Count()

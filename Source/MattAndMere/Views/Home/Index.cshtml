@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<a id="rsvp" href="/rsvp" style="display:none;" class="btn btn-default btn-large btn-block">Click here to RSVP</a>
+<div class="text-center mattandmere homeheading">
+    Matt &amp; Mere
+</div>
+<div class="weddingdate text-center homeheading">
+    May 20, 2017
+</div>
+
+<div id="rsvp" class="well-lg rsvp" style="display:none" onclick="rsvp()">
+    <h1>RSVP</h1>
+</div>
+
+<video playsinline autoplay="autoplay" preload="none" loop="loop" id="bgvid" poster="~/img/floatloopstart.jpg">
+    <source src="~/img/floatloop.mp4" />
+</video>
+
+<style type="text/css">
+    html {
+    background: url('../img/floatloopstart.JPG') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     -o-background-size: cover;
+    background-size: cover;   
+    }
+
+    .main {
+        background-color: transparent;
+        border: none;
+    }
+</style>
+
+<script type="text/javascript">
+    setTimeout(function () {
+        $("#rsvp").show("slow");
+    }, 10000);
+
+    function rsvp() {
+        window.location = '/rsvp';
+    }
+</script>

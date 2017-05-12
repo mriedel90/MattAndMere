@@ -1,0 +1,262 @@
+﻿html {
+    background: url('../img/IMG_5980.JPG') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+     -o-background-size: cover;
+    background-size: cover;   
+    color: #fff;
+    height:100%;
+    min-height:100%;
+}
+
+body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+    background-color: transparent;
+    height: 100%
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input[type="text"],input[type="number"], textarea  {
+    /*max-width: 280px;*/
+    font-family: Arial;
+    color: black;
+    font-size: 18px;
+}
+input[type="number"]  {
+    max-width: 150px;
+    text-align: center;
+}
+.block  {
+    display: block;
+}
+textarea {
+    width: 100%;
+}
+.center {
+    width: 100%;
+    text-align: center;
+}
+.centertext {
+    text-align: center;
+    display:inline-block;
+    padding:15px;
+}
+span.text-danger {
+    color: red;
+}
+
+
+table.allreservations {
+    width: 100%;
+}
+    table.allreservations th {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: bold;
+    }
+    table.allreservations td {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+.centercontainer {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.centerblock {
+    display: inline-block;
+    text-align: left;
+    color: red;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.navbar-inverse {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: #000;
+    text-shadow: 2px;
+    text-align: center;
+    font-size: 30px;
+    font-family: myfont;
+    /*text-shadow: 3px #fff;*/
+}
+
+ul.nav {
+    width: 100%;
+}
+
+ul.nav li{
+    color: #000;
+    text-shadow: 2px 2px #e5c2e1;
+}
+
+.main {
+    color:  #e5c2e1;
+    text-shadow: 2px 2px #000;
+    font-family: myfont;
+    font-size: 30px;
+    background-color: rgba(0,0,0,.5);
+    border: 1px solid #000;
+    border-radius: 5px 5px;
+    padding-bottom: 30px;
+}
+
+.main a {
+    color: #e69cde;
+}
+
+.main a:hover {
+    color: #eaa1e2;
+}
+
+.main h3 {
+    color: #e5c2e1;
+    text-shadow: 3px 3px #000;
+    font-family: myfont;
+    font-size: 30px;
+    font-weight: bold;
+}
+.main h2 {
+    color: #e5c2e1;
+    text-shadow: 3px 3px #000;
+    font-family: myfont;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.mattandmere {
+    font-size: 150px;
+    padding-top: 10%;
+}
+
+.weddingdate {
+    padding-top: 10%;
+    font-size: 100px;
+}
+
+.homeheading {
+    font-family: myfont, arial;
+    text-shadow: 1px 1px #000;
+    font-weight: bold;
+    color: #94e1b9;
+    /*color: #ffbdff;*/
+}
+
+.btn-default {
+    background-color: transparent;
+    border-color: #e5c2e1;
+    font-size: 25px;
+    color: #e5c2e1;
+}
+
+.btn-default:hover {
+    background-color: rgba(255,255,255,.3);
+    border-color: #e5c2e1;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+table.hotels table tr td:last-child {
+    padding-left: 10px;
+}
+table.hotels {
+    width: 100%;
+}
+
+video#bgvid { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#rsvp {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    
+    background-color: #e5c2e1;
+    border: 1px solid black;
+    font-size: 45px;
+    color: white;
+}
+
+@media screen and (max-device-width: 768px) {
+    .mattandmere {
+        font-size: 100px;
+        padding-top: 0;
+    }
+
+    .weddingdate {
+        padding-top: 5%;
+        font-size: 45px;
+    }
+
+    .navbar-inverse .navbar-nav li a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+@font-face {
+    font-family: weddingfont;
+    src: url('../fonts/weddingfont.eot');
+    src: url('../fonts/weddingfont.eot?#iefix') format('embedded-opentype'), url('../fonts/weddingfont.woff') format('woff'), url('../fonts/weddingfont.ttf') format('truetype'), url('../fonts/weddingfont.svg#weddingfont') format('svg');
+}
+
+@font-face {
+    font-family: fancyfont;    
+    src: url('../fonts/mvboli.eot');
+    src: url('../fonts/mvboli.eot?#iefix') format('embedded-opentype'), url('../fonts/mvboli.woff') format('woff'), url('../fonts/mvboli.ttf') format('truetype'), url('../fonts/mvboli.svg#mvboli') format('svg');
+}
+
+@font-face {
+    font-family: myfont;    
+    src: url('../fonts/myfont.eot');
+    src: url('../fonts/myfont.eot?#iefix') format('embedded-opentype'), url('../fonts/myfont.woff') format('woff'), url('../fonts/myfont.ttf') format('truetype'), url('../fonts/myfont.svg#mvboli') format('svg');
+}
+
+
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; /* This is the aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
