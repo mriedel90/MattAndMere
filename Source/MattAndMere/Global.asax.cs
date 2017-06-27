@@ -12,10 +12,10 @@ namespace MattAndMere
     public class MvcApplication : System.Web.HttpApplication
     {        protected void Application_BeginRequest()
         {
-            if (!Context.Request.IsSecureConnection && 
-                !Context.Request.Url.ToString().StartsWith("http://localhost") && 
-                !Context.Request.Url.ToString().Contains("http://staging"))
-                Response.Redirect(Context.Request.Url.ToString().Replace("http:", "https:"));
+            //if (!Context.Request.IsSecureConnection && 
+            //    !Context.Request.Url.ToString().StartsWith("http://localhost") && 
+            //    !Context.Request.Url.ToString().Contains("http://staging"))
+            //    Response.Redirect(Context.Request.Url.ToString().Replace("http:", "https:"));
         }
 
         protected void Application_Start()
