@@ -10,7 +10,6 @@
     <tr>
         <th></th>
         <th>Name</th>
-        <th>Email</th>
         <th>Attending</th>
         <th>Dinner</th>
         <th>Shuttle</th>
@@ -25,7 +24,6 @@
             <tr>
                 <td>@res.Id</td>
                 <td>@res.Name</td>
-                <td>@res.Email</td>
                 <td>@if (res.WillAttend.HasValue && res.WillAttend.Value) { <text>Yes</text> } else { <text>No</text>}</td>
                 <td>@res.MealChoice.ToString()</td>
                 <td>@if (res.Shuttle.HasValue && res.Shuttle.Value) { <text>Yes</text> } else { <text>No</text>}</td>
