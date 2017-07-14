@@ -207,6 +207,10 @@
     <Compile Include="Data\Migrations\201707141514339_removeEmailFromRes.Designer.cs">
       <DependentUpon>201707141514339_removeEmailFromRes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201707141645528_email.cs" />
+    <Compile Include="Data\Migrations\201707141645528_email.Designer.cs">
+      <DependentUpon>201707141645528_email.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Entities\Reservation.cs" />
     <Compile Include="Global.asax.cs">
@@ -344,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201707141514339_removeEmailFromRes.resx">
       <DependentUpon>201707141514339_removeEmailFromRes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201707141645528_email.resx">
+      <DependentUpon>201707141645528_email.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
