@@ -14,7 +14,6 @@ namespace MattAndMere.Models
         [Display(Name = "Guest Name")]
         [Required(ErrorMessage="Please enter your name")]
         public string Name { get; set; }
-        public string Email { get; set; }
 
         [Required(ErrorMessage = "Please indicate if you will be attending the wedding")]
         public bool? WillAttend { get; set; }
